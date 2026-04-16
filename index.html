@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Veterinaria - Sistema de Gestión</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div id="main-logo">
+			<img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo Veterinaria" width="80">
+			<h1>Veterinaria</h1>
+		</div>
+		<div id="forms">
+			<!-- Registro -->
+			<form id="register-form" class="form hidden">
+				<h2>Registro</h2>
+				<input type="email" id="register-email" placeholder="Correo electrónico" required>
+				<input type="password" id="register-password" placeholder="Contraseña" required>
+				<button type="submit">Registrarse</button>
+				<p class="form-link">¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
+				<div class="form-message" id="register-message"></div>
+			</form>
+			<!-- Login -->
+			<form id="login-form" class="form">
+				<h2>Iniciar Sesión</h2>
+				<input type="email" id="login-email" placeholder="Correo electrónico" required>
+				<input type="password" id="login-password" placeholder="Contraseña" required>
+				<button type="submit">Entrar</button>
+				<p class="form-link">¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+				<div class="form-message" id="login-message"></div>
+			</form>
+		</div>
+		<!-- Dashboard -->
+		<div id="dashboard" class="hidden">
+			<div class="dashboard-header">
+				<h2>Panel de Usuario</h2>
+				<button id="logout-btn">Cerrar sesión</button>
+			</div>
+			<div class="dashboard-content">
+				<div class="dashboard-section">
+					<h3>Agregar Servicio</h3>
+					<form id="service-form">
+						<input type="text" id="service-name" placeholder="Nombre del servicio" required>
+						<input type="number" id="service-cost" placeholder="Costo" min="0" step="0.01" required>
+						<button type="submit">Agregar Servicio</button>
+						<div class="form-message" id="service-message"></div>
+					</form>
+				</div>
+				<div class="dashboard-section">
+					<h3>Agregar Atención de Mascota</h3>
+					<form id="attention-form">
+						<input type="text" id="owner-name" placeholder="Nombre del dueño" required>
+						<input type="text" id="pet-name" placeholder="Nombre de la mascota" required>
+						<select id="service-select" required>
+							<option value="">Selecciona un servicio</option>
+						</select>
+						<input type="date" id="attention-date" required>
+						<button type="submit">Agregar Atención</button>
+						<div class="form-message" id="attention-message"></div>
+					</form>
+				</div>
+				<div class="dashboard-section">
+					<h3>Historial de Atenciones</h3>
+					<div id="history-list"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
